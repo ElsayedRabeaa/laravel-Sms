@@ -11,6 +11,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "psr/http-message": "1.1",
+        "srmklive/paypal": "~1.0",
         "vonage/client": "^4.0"
     },
     "require-dev": {

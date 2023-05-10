@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SmsController;
+use App\Http\Controllers\PayPalPaymentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,8 +18,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/any', function () {
-    return "hello ,user";
-});
+Route::get('/any', function (){
+    return "hello ,user";  
+   });
 
-Route::get('/send',[SmsController::class,'send']);
+
+
+Route::get('handle-payment', [PayPalPaymentController::class,'handlePayment'])->name('make.payment');
+Route::get('cancel-payment', [PayPalPaymentController::class,'paymentCancel'])->name('cancel.payment');
+Route::get('payment-success', [PayPalPaymentController::class,'paymentSuccess'])->name('success.payment');
+
+
+
+
